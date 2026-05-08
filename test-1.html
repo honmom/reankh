@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>តេស្តភាសាអង់គ្លេស ថ្នាក់ទី១០</title>
+    <style>
+        body {
+            font-family: 'Khmer OS Battambang', Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h3 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .instructions {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            font-family: 'Khmer OS Battambang', Arial, sans-serif;
+        }
+        .btn-submit:hover {
+            background-color: #219150;
+        }
+        .btn-clear {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        #result-container {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fcf3cf;
+            border: 2px dashed #f1c40f;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .score-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>តេស្តភាសាអង់គ្លេស ថ្នាក់ទី១០</h1>
+    
+    <div class="instructions">
+        <strong>សេចក្តីណែនាំ៖</strong><br>
+        - តេស្តនេះមាន ១០សំណួរ ស្មើនឹង ២០ពិន្ទុ។<br>
+        - ឆ្លើយត្រូវក្នុង ១សំណួរ ទទួលបាន <strong>+២ ពិន្ទុ</strong>។<br>
+        - ឆ្លើយខុសក្នុង ១សំណួរ ត្រូវដក <strong>-១ ពិន្ទុ</strong>។<br>
+        - ប្រសិនបើអ្នកមិនច្បាស់ អ្នកអាចរំលងសំណួរបាន (មិនបានពិន្ទុ និងមិនដកពិន្ទុ)។
+    </div>
+
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question-block">
+            <div class="question-text">1. I _____ to Siem Reap last year.</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a) go</label>
+                <label><input type="radio" name="q1" value="b"> b) went</label>
+                <label><input type="radio" name="q1" value="c"> c) gone</label>
+                <label><input type="radio" name="q1" value="d"> d) going</label>
+                <label><input type="radio" name="q1" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-block">
+            <div class="question-text">2. The Angkor Wat temple is a famous _____ in Cambodia.</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a) market</label>
+                <label><input type="radio" name="q2" value="b"> b) monument</label>
+                <label><input type="radio" name="q2" value="c"> c) mountain</label>
+                <label><input type="radio" name="q2" value="d"> d) modern</label>
+                <label><input type="radio" name="q2" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-block">
+            <div class="question-text">3. If it rains tomorrow, we _____ at home.</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> a) will stay</label>
+                <label><input type="radio" name="q3" value="b"> b) stayed</label>
+                <label><input type="radio" name="q3" value="c"> c) staying</label>
+                <label><input type="radio" name="q3" value="d"> d) stays</label>
+                <label><input type="radio" name="q3" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-block">
+            <div class="question-text">4. Rice _____ grown in many parts of Cambodia.</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> a) is</label>
+                <label><input type="radio" name="q4" value="b"> b) are</label>
+                <label><input type="radio" name="q4" value="c"> c) was</label>
+                <label><input type="radio" name="q4" value="d"> d) were</label>
+                <label><input type="radio" name="q4" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-block">
+            <div class="question-text">5. A person who teaches students is called a _____.</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> a) doctor</label>
+                <label><input type="radio" name="q5" value="b"> b) farmer</label>
+                <label><input type="radio" name="q5" value="c"> c) teacher</label>
+                <label><input type="radio" name="q5" value="d"> d) driver</label>
+                <label><input type="radio" name="q5" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-block">
+            <div class="question-text">6. My school starts _____ 7:00 AM.</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> a) in</label>
+                <label><input type="radio" name="q6" value="b"> b) on</label>
+                <label><input type="radio" name="q6" value="c"> c) at</label>
+                <label><input type="radio" name="q6" value="d"> d) from</label>
+                <label><input type="radio" name="q6" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question-block">
+            <div class="question-text">7. Phnom Penh is _____ than Battambang.</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a) big</label>
+                <label><input type="radio" name="q7" value="b"> b) bigger</label>
+                <label><input type="radio" name="q7" value="c"> c) biggest</label>
+                <label><input type="radio" name="q7" value="d"> d) more big</label>
+                <label><input type="radio" name="q7" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question-block">
+            <div class="question-text">8. What is the synonym of "beautiful"?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a) ugly</label>
+                <label><input type="radio" name="q8" value="b"> b) pretty</label>
+                <label><input type="radio" name="q8" value="c"> c) bad</label>
+                <label><input type="radio" name="q8" value="d"> d) angry</label>
+                <label><input type="radio" name="q8" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question-block">
+            <div class="question-text">9. Sophea and I are friends. _____ study in the same class.</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> a) They</label>
+                <label><input type="radio" name="q9" value="b"> b) We</label>
+                <label><input type="radio" name="q9" value="c"> c) You</label>
+                <label><input type="radio" name="q9" value="d"> d) She</label>
+                <label><input type="radio" name="q9" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question-block">
+            <div class="question-text">10. You should _____ your hands before eating.</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> a) wash</label>
+                <label><input type="radio" name="q10" value="b"> b) washing</label>
+                <label><input type="radio" name="q10" value="c"> c) washed</label>
+                <label><input type="radio" name="q10" value="d"> d) to wash</label>
+                <label><input type="radio" name="q10" value="skip" checked> <i>រំលង (Skip)</i></label>
+            </div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="calculateScore()">បញ្ជូនចម្លើយ (Submit)</button>
+    </form>
+
+    <div id="result-container">
+        <h2>លទ្ធផលរបស់អ្នក</h2>
+        <div class="score-text" id="final-score"></div>
+        <p id="score-details"></p>
+    </div>
+</div>
+
+<script>
+    // ចម្លើយដែលត្រឹមត្រូវ
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'a',
+        q4: 'a',
+        q5: 'c',
+        q6: 'c',
+        q7: 'b',
+        q8: 'b',
+        q9: 'b',
+        q10: 'a'
+    };
+
+    function calculateScore() {
+        let totalScore = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        let skippedCount = 0;
+
+        // ពិនិត្យសំណួរទាំង១០
+        for (let i = 1; i <= 10; i++) {
+            let questionName = 'q' + i;
+            let selectedOption = document.querySelector(`input[name="${questionName}"]:checked`).value;
+
+            if (selectedOption === 'skip') {
+                skippedCount++; // រំលង
+            } else if (selectedOption === correctAnswers[questionName]) {
+                totalScore += 2; // ត្រូវបូក ២
+                correctCount++;
+            } else {
+                totalScore -= 1; // ខុសដក ១
+                wrongCount++;
+            }
+        }
+
+        // បង្ហាញលទ្ធផល
+        document.getElementById('result-container').style.display = 'block';
+        document.getElementById('final-score').innerText = `ពិន្ទុសរុប: ${totalScore} / 20`;
+        document.getElementById('score-details').innerHTML = `
+            ឆ្លើយត្រូវ: <strong>${correctCount}</strong> សំណួរ (+${correctCount * 2} ពិន្ទុ)<br>
+            ឆ្លើយខុស: <strong>${wrongCount}</strong> សំណួរ (-${wrongCount} ពិន្ទុ)<br>
+            រំលង: <strong>${skippedCount}</strong> សំណួរ (0 ពិន្ទុ)
+        `;
+        
+        // Scroll ទៅកាន់លទ្ធផល
+        document.getElementById('result-container').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
